@@ -7,13 +7,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void GameLoop(void){	
+#include "Ship.h"
+
+/*void GameLoop(void){	
 	
-}
+}*/
 
 
 int esat::main(int argc, char **argv) {
 	
+	PlayerShip *ship;
+	InitShip(ship,200,200);
+
 	double current_time,last_time; 		
 	unsigned int fps=60;
 	esat::WindowInit(800,600);
@@ -28,8 +33,8 @@ int esat::main(int argc, char **argv) {
 		esat::DrawBegin();
 	    esat::DrawClear(0,0,0);
 		
-				
-		GameLoop();
+		MovePlayerShip(ship,550,50);		
+		//GameLoop();
 		
 		esat::DrawEnd();
 		do{
